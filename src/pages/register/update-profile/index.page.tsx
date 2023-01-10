@@ -18,7 +18,7 @@ import { unstable_getServerSession } from 'next-auth'
 import { buildNextAuthOptions } from '../../api/auth/[...nextauth].api'
 import { api } from '../../../lib/axios'
 import { useRouter } from 'next/router'
-import { NextSeo } from 'next-seo/lib/meta/nextSEO'
+import { NextSeo } from 'next-seo'
 
 const updateProfileSchema = z.object({
   bio: z.string(),

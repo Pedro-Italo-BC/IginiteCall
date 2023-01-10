@@ -23,7 +23,7 @@ import {
 import { convertTimeStringToMinutes } from '../../../utils/convert-time-string-to-minutes'
 import { api } from '../../../lib/axios'
 import { useRouter } from 'next/router'
-import { NextSeo } from 'next-seo/lib/meta/nextSEO'
+import { NextSeo } from 'next-seo'
 
 const timeIntervalsFormSchema = z.object({
   intervals: z
