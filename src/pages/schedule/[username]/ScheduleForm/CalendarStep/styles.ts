@@ -4,31 +4,44 @@ export const Container = styled(Box, {
   margin: '$6 auto 0',
   padding: 0,
   display: 'grid',
-  maxWidth: '100%',
   position: 'relative',
 
   variants: {
     isTimePikerOpen: {
       true: {
         gridTemplateColumns: '1fr 280px',
+
         '@media(max-width: 900px)': {
           gridTemplateColumns: '1fr',
         },
       },
-      false: { width: 540, gridTemplateColumns: '1fr' },
+      false: {
+        width: 540,
+        gridTemplateColumns: '1fr',
+      },
     },
   },
 })
 
 export const TimePiker = styled('div', {
   borderLeft: '1px solid $gray600',
-  padding: '$6 $6 $6',
+  padding: '$6 $6 0',
   overflowY: 'scroll',
+
   position: 'absolute',
   top: 0,
   bottom: 0,
   right: 0,
   width: 280,
+
+  '@media(max-width: 900px)': {
+    position: 'relative',
+    margin: '0 auto',
+    padding: '$6 $2 0',
+    borderLeft: 'none',
+    width: '100%',
+    borderTop: '1px solid $gray600',
+  },
 })
 
 export const TimePikerHeader = styled(Text, {
@@ -59,6 +72,8 @@ export const TimePikerItem = styled('button', {
   borderRadius: '$sm',
   fontSize: '$sm',
   lineHeight: '$base',
+  width: '100%',
+  margin: '0 auto',
 
   '&:last-child': {
     marginBottom: '$6',
@@ -76,5 +91,9 @@ export const TimePikerItem = styled('button', {
 
   '&:focus': {
     boxShadow: '0 0 0 2px $colors$gray100',
+  },
+
+  '@media(max-width: 900px)': {
+    width: '90%',
   },
 })
